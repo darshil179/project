@@ -9,6 +9,10 @@ int runcommand(char **cline, int where)
 		return chdir(cline[1]);
 	}
 
+	if (0 == strcmp(cline[0], "exit")) {
+		exit(0);
+	}
+
 
 	pid_t pid;
 	int status;
