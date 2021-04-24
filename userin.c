@@ -11,9 +11,9 @@ int userin(char *p)
 	char buffer[256];
 	int size;
 
-	if (0 == strcmp(cline[0], "cwd")) {
-		return getcwd(buffer,sizeof(buffer));
-	}
+	//if (0 == strcmp(cline[0], "cwd")) {
+	//	return getcwd(buffer,sizeof(buffer));
+	//}
 
 	int c, count;
 	ptr = inpbuf;
