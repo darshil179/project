@@ -5,7 +5,7 @@
 
 int runcommand(char **cline, int where)
 {
-	if (0 == strcmp(cline[0], 'cd')) {
+	if (0 == strcmp(cline[0], "cd")) {
 		return chdir(cline[1]);
 	}
 
