@@ -11,6 +11,8 @@ int userin(char *p)
 	char buffer[256];
 	int size;
 
+	char* pcwd = getcwd(buffer, 256);
+
 	//if (0 == strcmp(cline[0], "cwd")) {
 	//	return getcwd(buffer,sizeof(buffer));
 	//}
@@ -19,7 +21,7 @@ int userin(char *p)
 	ptr = inpbuf;
 	tok = tokbuf;
 	
-	printf("%s", p);
+	printf("%s", pcwd);
 	count = 0;
 	while (1)
 	{
