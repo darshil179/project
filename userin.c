@@ -25,7 +25,7 @@ int userin(char *p)
 	printf("This is your current directory (location) %s>>>", pcwd);
 	count = 0;
 	sleep(2);
-	printf("\n")
+	printf("\n");
 	while (1)
 	{
 		printf("Enter input to start counting from beginning \n");
