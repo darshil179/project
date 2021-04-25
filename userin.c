@@ -29,7 +29,17 @@ int userin(char *p)
 	count = 0;
 	// printf("\n");
 	
-	
+	while (1)
+	{
+		c = getchar();
+		alarm(0);
+		printf("Enter input to start counting from beginning \n");
+		
+		if ((c == EOF){
+			alarm(10);
+		}
+	}
+
 	while (1)
 	{
 		if ((c = getchar()) == EOF)
@@ -53,14 +63,7 @@ int userin(char *p)
 		
 	}
 
-	while (1)
-	{
-		printf("Enter input to start counting from beginning \n");
-		alarm(10);
-		if ((c = getchar()) == EOF){
-			alarm(0);
-		}
-	}
+	
 
 //	printf("inpbuf=%s\n", inpbuf);
 }
