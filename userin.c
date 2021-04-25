@@ -31,13 +31,14 @@ int userin(char *p)
 	
 	while (1)
 	{
+		alarm(10);
 		c = getchar();
 		alarm(0);
 		printf("Enter input to start counting from beginning \n");
 		
-		if ((c == EOF){
-			alarm(10);
-		}
+		// if ((c == EOF)){
+			
+		// }
 	}
 
 	while (1)
