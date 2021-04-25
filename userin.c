@@ -22,8 +22,10 @@ int userin(char *p)
 	ptr = inpbuf;
 	tok = tokbuf;
 	
-	printf("This is your current directory (location) %s>>>\n\n", pcwd);
+	printf("This is your current directory (location) %s>>>", pcwd);
 	count = 0;
+	sleep(2);
+	printf("\n")
 	while (1)
 	{
 		printf("Enter input to start counting from beginning \n");
