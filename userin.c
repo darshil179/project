@@ -24,7 +24,7 @@ int userin(char *p)
 	
 	printf("This is your current directory (location) %s>>>", pcwd);
 	count = 0;
-	sleep(2);
+	wait(2);
 	printf("\n");
 	while (1)
 	{
