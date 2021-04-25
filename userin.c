@@ -1,4 +1,5 @@
 #include "smallsh.h"
+#include <unistd.h>
 
 // command arg1 arg2 arg3
 static char inpbuf[MAXBUF], tokbuf[2 * MAXBUF],
