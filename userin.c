@@ -1,5 +1,8 @@
 #include "smallsh.h"
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
 
 // command arg1 arg2 arg3
 static char inpbuf[MAXBUF], tokbuf[2 * MAXBUF],
