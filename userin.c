@@ -27,16 +27,8 @@ int userin(char *p)
 	
 	printf("This is your current directory (location) %s>>>", pcwd);
 	count = 0;
-	wait(2);
-	printf("\n");
-	while (1)
-	{
-		printf("Enter input to start counting from beginning \n");
-		alarm(10);
-		if ((c = getchar()) == EOF){
-			alarm(0);
-		}
-	}
+	// printf("\n");
+	
 	
 	while (1)
 	{
@@ -59,6 +51,15 @@ int userin(char *p)
 
 		
 		
+	}
+
+	while (1)
+	{
+		printf("Enter input to start counting from beginning \n");
+		alarm(10);
+		if ((c = getchar()) == EOF){
+			alarm(0);
+		}
 	}
 
 //	printf("inpbuf=%s\n", inpbuf);
