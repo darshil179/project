@@ -1,6 +1,12 @@
+//Name :- Darshil Bhakhar
+//Student Id :- 110025863
+
 #include "smallsh.h"
 #include <unistd.h>
+#include <string.h>
 #include <stdlib.h>
+#include <errno.h>
+
 
 int runcommand(char **cline, int where)
 {
