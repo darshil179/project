@@ -7,27 +7,27 @@
 #include <stdlib.h>
 #include <errno.h>
 
-int executesection(int* input, int* output, char **section) {
-	pid_t pid;
-	int status;
-	switch (pid = fork()) {
-		case -1:
-			perror("smallsh");
-			return (-1);
-		case 0:
-			if (input[0] != -1) {
-				dup2(input[0], STDIN_FILENO);
-				close(input[0]);
-			}
-			if (output[1] != -1) {
+// int executesection(int* input, int* output, char **section) {
+// 	pid_t pid;
+// 	int status;
+// 	switch (pid = fork()) {
+// 		case -1:
+// 			perror("smallsh");
+// 			return (-1);
+// 		case 0:
+// 			if (input[0] != -1) {
+// 				dup2(input[0], STDIN_FILENO);
+// 				close(input[0]);
+// 			}
+// 			if (output[1] != -1) {
 
-			}
-			execvp(section[0], section);
-			perror(*section);
-			exit(1);
-	}
+// 			}
+// 			execvp(section[0], section);
+// 			perror(*section);
+// 			exit(1);
+// 	}
 	
-}
+// }
 
 int runcommand(char **cline, int where)
 {
@@ -78,25 +78,25 @@ int runcommand(char **cline, int where)
 
 	
 	// execute possible multiple commands
-	const int maximumCmds = 7;
-	int filedescriptors[maximumCmds][2];
-	char** cmdsections[maximumCmds];
-	cmdsections[0] = cline;
-	int commandscount = 0;
-	filedescriptors[0][0] = -1;
-	filedescriptors[0][1] = -1;
-	char *pitem;
-	for (char** pstr = cline;pitem != NULL; pitem++) {
-		if (*pstr == NULL || 0 == strcmp(*pstr, "|")) {
-			pipe(filedescriptors[++commandscount]);
-			cmdsections[commandscount] = pstr + 1;
-		}
-	}
-	filedescriptors[commandscount][0] = -1;
-	filedescriptors[commandscount][1] = -1;
-	for (int i=0; i<commandscount; i++) {
-		executesection(filedescriptors[i], filedescriptors[i+1], cmdsections[i]);
-	}
+	// const int maximumCmds = 7;
+	// int filedescriptors[maximumCmds][2];
+	// char** cmdsections[maximumCmds];
+	// cmdsections[0] = cline;
+	// int commandscount = 0;
+	// filedescriptors[0][0] = -1;
+	// filedescriptors[0][1] = -1;
+	// char *pitem;
+	// for (char** pstr = cline;pitem != NULL; pitem++) {
+	// 	if (*pstr == NULL || 0 == strcmp(*pstr, "|")) {
+	// 		pipe(filedescriptors[++commandscount]);
+	// 		cmdsections[commandscount] = pstr + 1;
+	// 	}
+	// }
+	// filedescriptors[commandscount][0] = -1;
+	// filedescriptors[commandscount][1] = -1;
+	// for (int i=0; i<commandscount; i++) {
+	// 	executesection(filedescriptors[i], filedescriptors[i+1], cmdsections[i]);
+	// }
 
 	//code for parents
 	// if (where == BACKGROUND)
