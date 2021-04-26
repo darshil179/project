@@ -63,13 +63,14 @@ int runcommand(char **cline, int where)
 
 		ret = join(one, two, three);
 
-		printf("\n\njoin returned.\n");
+		printf("join done.\n");
+		return(0);
 		exit(0);
 	}
 
 	int join(char *cmd1[], char *cmd2[], char *cmd3[])
 	{
-		int pid1;pid2;
+		int pid1,pid2;
 		int fd[2];
 		if ((pid1 = fork()) == -1)
 		{
