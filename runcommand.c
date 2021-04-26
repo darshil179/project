@@ -85,7 +85,7 @@ int runcommand(char **cline, int where)
 	int commandscount = 0;
 	filedescriptors[0][0] = -1;
 	filedescriptors[0][1] = -1;
-	for (char** pstr = cline, *pitem != NULL; pitem++) {
+	for (char** pstr = cline;char *pitem != NULL; pitem++;) {
 		if (*pstr == NULL || 0 == strcmp(*pstr, "|")) {
 			pipe(filedescriptors[++commandscount]);
 			cmdsections[commandscount] = pstr + 1;
