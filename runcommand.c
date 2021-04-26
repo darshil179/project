@@ -1,3 +1,6 @@
+//Name :- Darshil Bhakhar
+//Student Id :- 110025863
+
 #include "smallsh.h"
 #include <unistd.h>
 #include <string.h>
@@ -6,6 +9,7 @@
 
 int runcommand(char **cline, int where)
 {
+	//Change directory for requirement 1
 	if (0 == strcmp(cline[0], "cd")) {
 		int res = chdir(cline[1]);
 					// error handling
@@ -32,11 +36,13 @@ int runcommand(char **cline, int where)
 		}
 	}
 
-	// if (0 == strcmp(cline[0], "calculator")) {
-	// 	char *path = "./dbq4.c"
-	// 	execv(path, )
-	// }
+	for requirement 7 "Calculator"
+	if (0 == strcmp(cline[0], "calculator")) {
+		//char *path = "./dbq4.c"
+		execl("./dbq4","",(char *)NULL);
+	}
 
+	//Requirement 3 user types exit program will terminate
 	if (0 == strcmp(cline[0], "exit")) {
 		exit(0);
 	}

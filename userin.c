@@ -1,3 +1,6 @@
+//Name :- Darshil Bhakhar
+//Student Id :- 110025863
+
 #include "smallsh.h"
 #include <unistd.h>
 #include <sys/types.h>
@@ -25,13 +28,16 @@ int userin(char *p)
 	ptr = inpbuf;
 	tok = tokbuf;
 	
+//showing current directory for requirement 2
+
+	printf("This is your current directory (location) %s$", pcwd);
+	count = 0;
+	printf("\n");
 	
-	
+
+	//for exiting after 10 seconds if user doesn't give input requirement 4
 	while (1)
 	{
-		printf("This is your current directory (location) %s$", pcwd);
-		count = 0;
-		printf("\n");
 		printf("Enter input to start counting from beginning \n");
 		printf("Waiting for input for 10 seconds \n");
 		alarm(10);
