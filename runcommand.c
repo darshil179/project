@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <stat.h>
 
 int runcommand(char **cline, int where)
 {
