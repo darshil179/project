@@ -25,7 +25,7 @@ int userin(char *p)
 	ptr = inpbuf;
 	tok = tokbuf;
 	
-	printf("This is your current directory (location) %s>>>", pcwd);
+	printf("This is your current directory (location) %s$", pcwd);
 	count = 0;
 	// printf("\n");
 	
