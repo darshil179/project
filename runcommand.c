@@ -8,6 +8,7 @@ int runcommand(char **cline, int where)
 {
 	if (0 == strcmp(cline[0], "cd")) {
 		int res = chdir(cline[1]);
+					// error handling
 		switch (res)
 		{
 		case ENOTDIR: perror("A component of path Not a directory");
@@ -16,7 +17,14 @@ int runcommand(char **cline, int where)
 
 		case ENOENT: perror("No such file or directory");
 			/* code */
-			break;	
+			break;
+
+		case EACCES: perror("Permission denied");
+			break;
+		case EIO:	 perror("An input output error occured");
+			break;
+		case ENAMETOOLONG: perror("Path is to long");
+			break;		
 		
 		default:
 		return res;
