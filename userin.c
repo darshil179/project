@@ -31,6 +31,7 @@ int userin(char *p)
 	
 	while (1)
 	{
+		printf("Enter input to start counting from beginning \n");
 		alarm(10);
 		c = getchar();
 		alarm(0);
