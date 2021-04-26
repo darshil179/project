@@ -36,19 +36,19 @@ int userin(char *p)
 	
 
 	//for exiting after 10 seconds if user doesn't give input requirement 4
-	while (1)
-	{
-		printf("Enter input to start counting from beginning \n");
-		printf("Waiting for input for 10 seconds \n");
-		alarm(10);
-		c = getchar();
-		alarm(0);
-		printf("Enter input to start counting from beginning \n");
+	// while (1)
+	// {
+	// 	printf("Enter input to start counting from beginning \n");
+	// 	printf("Waiting for input for 10 seconds \n");
+	// 	alarm(10);
+	// 	c = getchar();
+	// 	alarm(0);
+	// 	printf("Enter input to start counting from beginning \n");
 		
-		// if ((c == EOF)){
+	// 	// if ((c == EOF)){
 			
-		// }
-	}
+	// 	// }
+	// }
 
 	while (1)
 	{
