@@ -43,6 +43,22 @@ int runcommand(char **cline, int where)
 		execl("./dbq4","",(char *)NULL);
 	}
 
+	//for requirement 5 "Calculator"
+	if (0 == strcmp(cline[0], "join")) {
+		char* one[4] = { "ls", "-lt", "more",NULL };
+    
+    char *two[2]={"|", NULL};
+
+    char* three[2] = { "more", NULL };
+
+    int ret;
+
+    ret = join(one, two,three);
+
+    printf("\n\njoin returned.\n");
+    exit(0);
+	}
+
 	//Requirement 3 user types exit program will terminate
 	if (0 == strcmp(cline[0], "exit")) {
 		exit(0);
