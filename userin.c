@@ -32,7 +32,7 @@ int userin(char *p)
 	while (1)
 	{
 		printf("Enter input to start counting from beginning \n");
-		printf("Waiting for input \n");
+		printf("Waiting for input for 10 seconds \n");
 		alarm(10);
 		c = getchar();
 		alarm(0);
