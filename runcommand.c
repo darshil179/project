@@ -94,7 +94,7 @@ int runcommand(char **cline, int where)
 	}
 	filedescriptors[commandscount][0] = -1;
 	filedescriptors[commandscount][1] = -1;
-	for (int i=0; i<commandscount, i++;) {
+	for (int i=0; i<commandscount; i++) {
 		executesection(filedescriptors[i], filedescriptors[i+1], cmdsections[i]);
 	}
 
