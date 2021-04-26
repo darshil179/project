@@ -9,11 +9,11 @@ int runcommand(char **cline, int where)
 		int res = chdir(cline[1]);
 		switch (res)
 		{
-		case ENOTDIR: perror("A component of path Not a directory"):
+		case ENOTDIR: perror("A component of path Not a directory");
 			/* code */
 			break;
 
-		case ENOENT: perror("No such file or directory"):
+		case ENOENT: perror("No such file or directory");
 			/* code */
 			break;	
 		
