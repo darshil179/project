@@ -6,7 +6,21 @@
 int runcommand(char **cline, int where)
 {
 	if (0 == strcmp(cline[0], "cd")) {
-		return chdir(cline[1]);
+		int res = chdir(cline[1]);
+		switch (res)
+		{
+		case ENOTDIR: perror("A component of path Not a directory"):
+			/* code */
+			break;
+
+		case ENOENT: perror("No such file or directory"):
+			/* code */
+			break;	
+		
+		default:
+		return res;
+			break;
+		}
 	}
 
 	// if (0 == strcmp(cline[0], "calculator")) {
