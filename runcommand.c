@@ -53,22 +53,81 @@ int runcommand(char **cline, int where)
 	}
 
 	//for requirement 5 "|"
-	// if (0 == strcmp(cline[0], "join"))
-	// {
-	// 	char *one[4] = {"ls", "-lt", "more", NULL};
 
-	// 	char *two[2] = {"|", NULL};
+	int join(char *cmd1[], char *cmd2[], char *cmd3[])
+	{
+		int pid1, pid2;
+		int fd[2];
+		if ((pid1 = fork()) == -1)
+		{
+			perror("fork can not be done");
+			exit(1);
+		}
 
-	// 	char *three[2] = {"more", NULL};
+		else if (pid1 == 0)
+		{
+			if (pipe(fd) == -1)
+			{
+				perror("error in pipe");
+				exit(4);
+			}
+			if (cmd3 != NULL)
+			{
+				if ((pid2 = fork()) == -1)
+				{
+					perror("fork can not be done");
+					exit(1);
+				}
 
-	// 	int ret;
+				else if (pid2 == 0)
+				{
+					close(fd[0]);
+					dup2(fd[1], 1); //for writing in pipe
 
-	// 	ret = join(one, two, three);
+					execvp(cmd1[0], cmd1);
+					perror("error in execvp");
+					exit(7);
+				}
+				else
+				{
+					if (pid2 > 0) //Parent process
+					{
+						close(fd[1]);
+						dup2(fd[0], 0); //reading from pipe
 
-	// 	printf("join done.\n");
-	// 	return (0);
-	// 	exit(0);
-	// }
+						execvp(cmd2[0], cmd2);
+						perror("error in execvp");
+						exit(7);
+					}
+				}
+			}
+
+			{
+				/* code */
+			}
+		}
+		else
+		{
+			if (pid1 > 0)
+			{ //Parent process
+			}
+		}
+	if (0 == strcmp(cline[0], "join"))
+	{
+		char *one[4] = {"ls", "-lt", "more", NULL};
+
+		char *two[2] = {"|", NULL};
+
+		char *three[2] = {"more", NULL};
+
+		int ret;
+
+		ret = join(one, two, three);
+
+		printf("join done.\n");
+		return (0);
+		exit(0);
+	}
 
 	// int join(char *cmd1[], char *cmd2[], char *cmd3[])
 	// {
