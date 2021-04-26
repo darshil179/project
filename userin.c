@@ -29,17 +29,17 @@ int userin(char *p)
 	count = 0;
 	// printf("\n");
 	
-	while (1)
-	{
-		alarm(10);
-		c = getchar();
-		alarm(0);
-		printf("Enter input to start counting from beginning \n");
+	// while (1)
+	// {
+	// 	alarm(10);
+	// 	c = getchar();
+	// 	alarm(0);
+	// 	printf("Enter input to start counting from beginning \n");
 		
-		// if ((c == EOF)){
+	// 	// if ((c == EOF)){
 			
-		// }
-	}
+	// 	// }
+	// }
 
 	while (1)
 	{

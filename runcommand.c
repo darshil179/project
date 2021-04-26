@@ -9,6 +9,11 @@ int runcommand(char **cline, int where)
 		return chdir(cline[1]);
 	}
 
+	// if (0 == strcmp(cline[0], "calculator")) {
+	// 	char *path = "./dbq4.c"
+	// 	execv(path, )
+	// }
+
 	if (0 == strcmp(cline[0], "exit")) {
 		exit(0);
 	}
