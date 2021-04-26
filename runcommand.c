@@ -69,7 +69,7 @@ int runcommand(char **cline, int where)
 
 	int join(char *cmd1[], char *cmd2[], char *cmd3[])
 	{
-
+		int pid;
 		int fd[2];
 		if ((pid = fork()) == -1)
 		{
