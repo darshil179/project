@@ -69,15 +69,15 @@ int runcommand(char **cline, int where)
 
 	int join(char *cmd1[], char *cmd2[], char *cmd3[])
 	{
-		int pid;
+		int pid1;pid2;
 		int fd[2];
-		if ((pid = fork()) == -1)
+		if ((pid1 = fork()) == -1)
 		{
 			perror("fork can not be done");
 			exit(1);
 		}
 
-		else if (pid == 0)
+		else if (pid1 == 0)
 		{
 			if (pipe(fd) == -1)
 			{
@@ -86,13 +86,13 @@ int runcommand(char **cline, int where)
 			}
 			if (cmd3 != NULL)
 			{
-				if ((pid = fork()) == -1)
+				if ((pid2 = fork()) == -1)
 				{
 					perror("fork can not be done");
 					exit(1);
 				}
 
-				else if (pid == 0)
+				else if (pid2 == 0)
 				{
 					close(fd[0]);
 					dup2(fd[1], 1); //for writing in pipe
@@ -103,7 +103,7 @@ int runcommand(char **cline, int where)
 				}
 				else
 				{
-					if (pid > 0) //Parent process
+					if (pid2 > 0) //Parent process
 					{
 						close(fd[1]);
 						dup2(fd[0], 0); //reading from pipe
@@ -121,7 +121,7 @@ int runcommand(char **cline, int where)
 		}
 		else
 		{
-			if (pid > 0)
+			if (pid1 > 0)
 			{ //Parent process
 			}
 		}
