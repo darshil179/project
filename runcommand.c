@@ -98,16 +98,16 @@ int runcommand(char **cline, int where)
 	}
 
 	//code for parents
-	if (where == BACKGROUND)
-	{
-		printf("[process id %d]\n", pid);
-		return (0);
-	}
+	// if (where == BACKGROUND)
+	// {
+	// 	printf("[process id %d]\n", pid);
+	// 	return (0);
+	// }
 	
-	if (waitpid(pid, &status, 0) == -1)
-		return (-1);
-	else
-		return (status);
+	// if (waitpid(pid, &status, 0) == -1)
+	// 	return (-1);
+	// else
+	// 	return (status);
 
 	// pid_t pid;
 	// int status;
