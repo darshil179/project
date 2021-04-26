@@ -26,17 +26,7 @@ int executesection(int* input, int* output, char **section) {
 			perror(*section);
 			exit(1);
 	}
-	//code for parents
-	if (where == BACKGROUND)
-	{
-		printf("[process id %d]\n", pid);
-		return (0);
-	}
 	
-	if (waitpid(pid, &status, 0) == -1)
-		return (-1);
-	else
-		return (status);
 }
 
 int runcommand(char **cline, int where)
@@ -95,7 +85,7 @@ int runcommand(char **cline, int where)
 	int commandscount = 0;
 	filedescriptors[0][0] = -1;
 	filedescriptors[0][1] = -1;
-	for (char** pstr = cline; *pitem != NULL; pitem++) {
+	for (char** pstr = cline, *pitem != NULL; pitem++) {
 		if (*pstr == NULL || 0 == strcmp(*pstr, "|")) {
 			pipe(filedescriptors[++commandscount]);
 			cmdsections[commandscount] = pstr + 1;
@@ -103,10 +93,21 @@ int runcommand(char **cline, int where)
 	}
 	filedescriptors[commandscount][0] = -1;
 	filedescriptors[commandscount][1] = -1;
-	for (int i=0; i<commandscount, i++) {
+	for (int i=0; i<commandscount, i++;) {
 		executesection(filedescriptors[i], filedescriptors[i+1], cmdsections[i]);
 	}
 
+	//code for parents
+	if (where == BACKGROUND)
+	{
+		printf("[process id %d]\n", pid);
+		return (0);
+	}
+	
+	if (waitpid(pid, &status, 0) == -1)
+		return (-1);
+	else
+		return (status);
 
 	// pid_t pid;
 	// int status;
