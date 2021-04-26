@@ -36,7 +36,7 @@ int runcommand(char **cline, int where)
 		}
 	}
 
-	for requirement 7 "Calculator"
+	//for requirement 7 "Calculator"
 	if (0 == strcmp(cline[0], "calculator")) {
 		//char *path = "./dbq4.c"
 		execl("./dbq4","",(char *)NULL);
