@@ -20,7 +20,7 @@ int executesection(int* input, int* output, char **section) {
 				close(input[0]);
 			}
 			if (output[1] != -1) {
-
+				
 			}
 			execvp(section[0], section);
 			perror(*section);
@@ -101,8 +101,8 @@ int runcommand(char **cline, int where)
 			cmdsections[commandscount] = pstr + 1;
 		}
 	}
-	filedescriptors[commandscount][0] = -1;
-	filedescriptors[commandscount][1] = -1;
+	filedescriptors[commandscount+1][0] = -1;
+	filedescriptors[commandscount+1][1] = -1;
 	for (int i=0; i<commandscount, i++) {
 		executesection(filedescriptors[i], filedescriptors[i+1], cmdsections[i]);
 	}
