@@ -53,22 +53,22 @@ int runcommand(char **cline, int where)
 	}
 
 	//for requirement 5 "|"
-	if (0 == strcmp(cline[0], "join"))
-	{
-		char *one[4] = {"ls", "-lt", "more", NULL};
+	// if (0 == strcmp(cline[0], "join"))
+	// {
+	// 	char *one[4] = {"ls", "-lt", "more", NULL};
 
-		char *two[2] = {"|", NULL};
+	// 	char *two[2] = {"|", NULL};
 
-		char *three[2] = {"more", NULL};
+	// 	char *three[2] = {"more", NULL};
 
-		int ret;
+	// 	int ret;
 
-		ret = join(one, two, three);
+	// 	ret = join(one, two, three);
 
-		printf("join done.\n");
-		return (0);
-		exit(0);
-	}
+	// 	printf("join done.\n");
+	// 	return (0);
+	// 	exit(0);
+	// }
 
 	int join(char *cmd1[], char *cmd2[], char *cmd3[])
 	{
